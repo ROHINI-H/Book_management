@@ -6,7 +6,7 @@ function BookList(props) {
         <div className="bookList">
             {
                 props.booksData.map(data => (
-                    <Book details={data} />
+                    <Book key={data.id} details={data} />
                 ))
             }
         </div>
