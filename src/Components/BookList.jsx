@@ -1,15 +1,15 @@
 import Book from "./Book";
+import "./style.css";
 
 function BookList(props) {
     return (
-        <>
-            {/* <Book details ={props.booksData[0]} /> */}
+        <div className="bookList">
             {
                 props.booksData.map(data => (
                     <Book details={data} />
                 ))
             }
-        </>
+        </div>
     )
 }
 

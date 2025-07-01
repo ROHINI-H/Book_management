@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <h1>Book Management App</h1>
-      <BookList booksData ={Books} />
+      <BookList booksData={Books} />
     </>
   )
 }
