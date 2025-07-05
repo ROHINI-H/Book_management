@@ -3,10 +3,14 @@ import "./style.css";
 import { Books } from "../utils/mockData";
 import { useState } from "react";
 import {Link} from "react-router-dom";
+import { useContext } from "react";
+import userContext from "../utils/userContext";
 
 function BookList() {
     const [searchText, setSearchText] = useState("");
     const [filteredBooks, setFilteredBooks] = useState(Books);
+
+    const {setUserName} = useContext(userContext);
 
     function handleSearch() {
         setFilteredBooks(Books.filter((book) =>
@@ -16,6 +20,7 @@ function BookList() {
 
     return (
         <>
+        <input type="text" onChange={(e) => setUserName(e.target.value)} />
             <div className="search">
                 <h1>Book Management App</h1>
                 <h2>Search Books</h2>

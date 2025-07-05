@@ -1,7 +1,10 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import userContext from "../utils/userContext";
 
 function Header() {
+    const data = useContext(userContext);
     return (
         <div className="header">
             <ul>
@@ -14,6 +17,7 @@ function Header() {
                 <Link to="/contact">
                     <li>Contact</li>
                 </Link>
+                <li>{data.loggedInUser}</li>
             </ul>
         </div>
     )
